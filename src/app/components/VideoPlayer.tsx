@@ -2,13 +2,12 @@
 
 import LoadingSpinner from './LoadingSpinner'
 
-// Optional: Add type props for full TS support
-// type VideoPlayerProps = {
-//   videoUrl: string
-//   isLoading: boolean 
-// }
+type VideoPlayerProps = {
+  videoUrl: string
+  isLoading: boolean
+}
 
-export default function VideoPlayer({ videoUrl, isLoading }) {
+export default function VideoPlayer({ videoUrl, isLoading }: VideoPlayerProps) {
   if (isLoading) {
     return (
       <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">

@@ -44,14 +44,14 @@ export default function VideoForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <label className="text-sm flex items-center gap-2 text-gray-700 mb-1">
-        <Sparkles className="text-yellow-500" size={16} />
-        Video Prompt
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <label className="text-xl flex items-center gap-2 text-gray-800 font-medium">
+        <Sparkles className="text-yellow-500" size={24} />
+        Enter a video prompt
       </label>
 
       <textarea
-        className="w-full h-32 border-2 border-blue-400 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-300 transition bg-white"
+        className="w-full h-48 border border-blue-300 bg-white/70 rounded-xl p-4 text-xl placeholder:text-gray-500 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-400"
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
         placeholder="Describe your video idea here..."
@@ -61,13 +61,13 @@ export default function VideoForm({
       <button
         type="submit"
         disabled={isLoading}
-        className={`w-full font-semibold py-2 rounded-lg transition flex items-center justify-center gap-2 ${
+        className={`w-full mt-6 text-white py-4 px-4 rounded-xl font-semibold text-2xl tracking-wide transition-all duration-300 ${
           isLoading
-            ? 'bg-indigo-300 cursor-not-allowed opacity-60'
-            : 'bg-gradient-to-r from-pink-400 to-purple-500 hover:scale-[1.02] hover:shadow-md text-white'
+            ? 'bg-blue-300 cursor-not-allowed'
+            : 'bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-[1.02] shadow-md'
         }`}
       >
-        <Sparkles size={18} />
+        <Sparkles size={24} className="inline-block mr-1" />
         {isLoading ? 'Generating...' : 'Generate Video'}
       </button>
     </form>
